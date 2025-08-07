@@ -19,18 +19,21 @@
 - **Containerization:** [Docker](https://www.docker.com/)
 - **Deployment:** [Render](https://render.com/)
 
-## API Endpoints
+## API Documentation
 
-Dưới đây là danh sách các API endpoint có sẵn:
+To explore and test the API endpoints, please visit our public Postman documentation:
 
-| Phương thức | Endpoint | Mô tả | Body (Request) | Body (Response) |
-| :--- | :--- | :--- | :--- | :--- |
-| `GET` | `/tasks` | Lấy danh sách tất cả công việc. | `(empty)` | `[{"id": "...", "title": "...", "completed": false}]` |
-| `POST` | `/tasks` | Tạo một công việc mới. | `{"title": "Tên công việc"}` | `{"id": "...", "title": "...", "completed": false}` |
-| `PUT` | `/tasks/:id` | Cập nhật trạng thái của một công việc. | `{"completed": true}` | `{"id": "...", "title": "...", "completed": true}` |
-| `DELETE` | `/tasks/:id` | Xóa một công việc. | `(empty)` | `{"message": "Task deleted successfully"}` |
+**[View API Documentation](https://documenter.getpostman.com/view/34681830/2sB3BDJW5E)**
 
-## Hướng dẫn sử dụng
+This documentation provides detailed information about each endpoint, including request parameters, headers, and example responses.
+
+For a quick start, you can also import the collection directly into your Postman client using the button below:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a8a5f3c5-7c1f-4d2e-9d3d-7e7e5e7e5e7e?action=collection%2Ffork&source=rip_markdown&collection-url=https%3A%2F%2Fraw.githubusercontent.com%2Fnbminh24%2Fgodoit_backend%2Fmain%2Fgodoit_backend.postman_collection.json)
+
+1.  Nhấn vào nút **"Run in Postman"** ở trên.
+2.  Chọn workspace Postman của bạn để fork collection này.
+
 
 ### Cài đặt và Chạy dự án local
 
