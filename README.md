@@ -19,21 +19,19 @@
 - **Containerization:** [Docker](https://www.docker.com/)
 - **Deployment:** [Render](https://render.com/)
 
-## API Documentation
+## Hướng dẫn sử dụng
 
-To explore and test the API endpoints, please visit our public Postman documentation:
+### Kiểm thử với Postman
 
-**[View API Documentation](https://documenter.getpostman.com/view/34681830/2sB3BDJW5E)**
-
-This documentation provides detailed information about each endpoint, including request parameters, headers, and example responses.
-
-For a quick start, you can also import the collection directly into your Postman client using the button below:
+Để dễ dàng kiểm thử các API endpoint, bạn có thể sử dụng Postman Collection đã được cung cấp sẵn.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a8a5f3c5-7c1f-4d2e-9d3d-7e7e5e7e5e7e?action=collection%2Ffork&source=rip_markdown&collection-url=https%3A%2F%2Fraw.githubusercontent.com%2Fnbminh24%2Fgodoit_backend%2Fmain%2Fgodoit_backend.postman_collection.json)
 
-1.  Nhấn vào nút **"Run in Postman"** ở trên.
-2.  Chọn workspace Postman của bạn để fork collection này.
+**Các bước thực hiện:**
 
+1.  Nhấn vào nút **Run in Postman** ở trên.
+2.  Chọn workspace của bạn trong Postman để sao chép (fork) collection này về.
+3.  Collection đã được cấu hình sẵn để sử dụng API đã deploy. Bạn có thể bắt đầu gửi request ngay lập tức.
 
 ### Cài đặt và Chạy dự án local
 
