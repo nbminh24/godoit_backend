@@ -1,65 +1,69 @@
-# Go-doit Backend API
+# Godoit - Backend API
 
-Đây là project backend cho ứng dụng To-do List, được xây dựng bằng Golang và Gin framework. Project này là một phần của bài test tuyển dụng Intern Developer, tập trung vào việc xây dựng một REST API ổn định, có cấu trúc tốt và dễ dàng triển khai.
+🚀 **Live API:** [https://godoit-backend.onrender.com/tasks](https://godoit-backend.onrender.com/tasks) 🚀
 
-**Live API Endpoint:** [https://godoit-backend.onrender.com](https://godoit-backend.onrender.com)
+Đây là backend API cho ứng dụng quản lý công việc **Godoit**, được xây dựng hoàn toàn bằng **Golang**. Hệ thống cung cấp các endpoint RESTful để quản lý công việc một cách hiệu quả, an toàn và có hiệu suất cao. Dự án này được phát triển như một phần của bài kiểm tra kỹ năng cho vị trí Intern Developer.
 
----
+## Các tính năng chính
 
-## ✨ Tính năng
+- **API RESTful Toàn diện:** Cung cấp đầy đủ các hoạt động **CRUD** (Create, Read, Update, Delete) cho việc quản lý công việc.
+- **Hiệu suất cao:** Xây dựng trên nền tảng **Gin**, một trong những web framework nhanh nhất của Golang, đảm bảo thời gian phản hồi API tối thiểu.
+- **Cấu trúc rõ ràng:** Mã nguồn được tổ chức theo các module `handlers`, `store`, và `models`, giúp dễ dàng bảo trì và mở rộng.
+- **Hỗ trợ CORS:** Cấu hình sẵn sàng để chấp nhận các yêu cầu từ frontend một cách an toàn.
+- **Sẵn sàng cho Containerization:** Đi kèm với `Dockerfile` và `docker-compose.yml` để dễ dàng đóng gói và triển khai.
 
--   **Quản lý công việc:** Thêm, xem, cập nhật và xóa công việc.
--   **Lưu trữ trong bộ nhớ:** Dữ liệu được lưu trữ tạm thời trong bộ nhớ (in-memory), phù hợp cho mục đích demo và kiểm thử.
--   **Đóng gói với Docker:** Ứng dụng được đóng gói bằng Docker, giúp việc triển khai và chạy local trở nên nhất quán và đơn giản.
--   **Triển khai tự động:** Tích hợp với Render để tự động deploy mỗi khi có thay đổi trên nhánh `main`.
+## Công nghệ và Công cụ
 
----
+- **Ngôn ngữ:** [Golang](https://go.dev/)
+- **Web Framework:** [Gin](https://gin-gonic.com/)
+- **Containerization:** [Docker](https://www.docker.com/)
+- **Deployment:** [Render](https://render.com/)
 
-## 🛠️ Công nghệ sử dụng
+## API Endpoints
 
--   **Ngôn ngữ:** [Go](https://golang.org/)
--   **Framework:** [Gin](https://github.com/gin-gonic/gin)
--   **Containerization:** [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
--   **Deployment:** [Render](https://render.com/)
+Dưới đây là danh sách các API endpoint có sẵn:
 
----
+| Phương thức | Endpoint | Mô tả | Body (Request) | Body (Response) |
+| :--- | :--- | :--- | :--- | :--- |
+| `GET` | `/tasks` | Lấy danh sách tất cả công việc. | `(empty)` | `[{"id": "...", "title": "...", "completed": false}]` |
+| `POST` | `/tasks` | Tạo một công việc mới. | `{"title": "Tên công việc"}` | `{"id": "...", "title": "...", "completed": false}` |
+| `PUT` | `/tasks/:id` | Cập nhật trạng thái của một công việc. | `{"completed": true}` | `{"id": "...", "title": "...", "completed": true}` |
+| `DELETE` | `/tasks/:id` | Xóa một công việc. | `(empty)` | `{"message": "Task deleted successfully"}` |
 
-## 🚀 Hướng dẫn sử dụng
+## Hướng dẫn sử dụng
 
-### Chạy dự án ở Local
+### Cài đặt và Chạy dự án local
 
-Có hai cách để chạy dự án này trên máy của bạn.
-
-#### Cách 1: Sử dụng Go (Yêu cầu đã cài đặt Go 1.21+)
-
-1.  **Clone repository:**
-    ```bash
+1.  **Clone the repository:**
+    ```sh
     git clone https://github.com/nbminh24/godoit_backend.git
     cd godoit_backend
     ```
 
-2.  **Cài đặt dependencies:**
-    ```bash
+2.  **Install dependencies:**
+    ```sh
     go mod tidy
     ```
 
-3.  **Chạy server:**
-    ```bash
+3.  **Run the development server:**
+    Ứng dụng sẽ chạy tại `http://localhost:8080`.
+    ```sh
     go run main.go
     ```
-    Server sẽ chạy tại `http://localhost:8080`.
 
-#### Cách 2: Sử dụng Docker (Khuyến khích)
+### Sử dụng với Docker
 
-Đây là cách đơn giản và nhất quán nhất để chạy dự án mà không cần cài đặt Go.
-
-1.  **Yêu cầu:**
+1.  **Build và chạy container:**
+    ```sh
+    docker-compose up --build
+    ```
+    API sẽ có sẵn tại `http://localhost:8080`.  **Yêu cầu:**
     -   [Docker](https://docs.docker.com/get-docker/)
     -   [Docker Compose](https://docs.docker.com/compose/install/)
 
 2.  **Build và chạy container:**
     Mở terminal tại thư mục gốc của dự án và chạy lệnh:
-    ```bash
+    ```sh
     docker-compose up --build
     ```
     Để chạy ở chế độ nền, thêm cờ `-d`:
